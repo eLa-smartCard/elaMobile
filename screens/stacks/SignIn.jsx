@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { StyleSheet, Text, View, ScrollView, FlatList, Image, TouchableWithoutFeedback } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Buffer } from "buffer";
@@ -11,7 +11,7 @@ import { ApplicationProvider, Layout, IconRegistry } from '@ui-kitten/components
 import * as SecureStore from 'expo-secure-store';
 import { AuthContext } from '../../App';
 export default function SignIn({ navigation }) {
-    const {signedIn} = useContext(AuthContext)
+    const { signedIn } = useContext(AuthContext)
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -38,14 +38,14 @@ export default function SignIn({ navigation }) {
                     placeholder='Nhập email...'
                     style={styles.input}
                     accessoryRight={<Icon name='person-outline' />}
-                // onChangeText={nextValue => setValue(nextValue)}
+                    onChangeText={nextValue => setEmail(nextValue)}
                 />
                 <Input
-                    value={email}
+                    value={password}
                     placeholder='Nhập password...'
                     style={styles.input}
                     accessoryRight={<Icon name='lock-outline' />}
-                // onChangeText={nextValue => setValue(nextValue)}
+                    onChangeText={nextValue => setPassword(nextValue)}
                 />
                 <Text style={styles.forgotPass}>Quên mật khẩu</Text>
                 <Text style={styles.btn} onPress={handleSignIn}>Đăng nhập</Text>
